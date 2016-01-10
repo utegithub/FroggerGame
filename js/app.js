@@ -1,21 +1,36 @@
-
-
-
+     
 //Enemy constructor
 
-
-var Enemy = function(){
+var Enemy = function(x,y,speed){
 
 this.sprite = 'images/enemy-bug.png';
-this.yArray = [60,145,230];    
-this.speedArray = [30,45,55,60,90,120]; 
-this.randY = this.yArray[Math.floor(Math.random() * this.yArray.length)];
-//this.randY = Math.floor(Math.random() * this.yArray.length);
-this.randSpeed = this.speedArray[Math.floor(Math.random() * this.speedArray.length)];
-this.x = -2;
-return this.enemy = [this.x,this.randY,this.randSpeed];
-
+//this.yArray = [60,145,230];    
+//this.speedArray = [30,45,55,60,90,120]; 
+this.y = y;
+this.speed = speed;
+this.x = -3;
 }
+//Creating a random Speed out of the array
+
+function makeRandomSpeed() {
+//Enemy.prototype.getSpeed = function() {
+  var speedArray = [30,45,55,60,90,120]; 
+  var randSpeed = speedArray[Math.floor(Math.random() * speedArray.length)];
+  return randSpeed;
+}//return this.enemy = [this.x,this.randY,this.randSpeed];
+
+
+
+//Creating a random Y out of the array
+function makeRandomY() {
+//Enemy.prototype.getY = function() {
+//var yArray =  [10,60,90,145,210];    
+//var yArray =  [0,65,155,235];
+var yArray =  [60,145,230];
+ var randY = yArray[Math.floor(Math.random() * yArray.length)];
+ return randY;
+}
+
 
 //Updating enemy if enemy crosses the screen
 Enemy.prototype.update = function(dt) {
@@ -23,28 +38,33 @@ Enemy.prototype.update = function(dt) {
         if (this.x >600)
   
     {
-        this.x = -3;
+        this.reset();
+		
     }
 };
 
 //Resetting the enemy with the random values
 Enemy.prototype.reset = function() {
     this.x = -2
-  
+  this.y = makeRandomY();
+  this.speed = makeRandomSpeed();
 }
 
 
 
 //Resetting the enemy with the random values
-Enemy.prototype.reset = function() {
-   var yArray =  [60,145,230];    
-   var speedArray = [60,90,110]; 
-   var randY = Math.floor(Math.random() * yArray.length);
-   var randSpeed = Math.floor(Math.random() * speedArray.length); 
-    this.x = -2
-    this.y = this.randY();
-    this.speed = this.randSpeed();
-}
+//Enemy.prototype.reset = function() {
+   //var yArray =  [60,145,230];    
+   //var speedArray = [60,90,110]; 
+   //var randY = Math.floor(Math.random() * yArray.length);
+   //var randSpeed = Math.floor(Math.random() * speedArray.length); 
+ //   this.x = -3
+//	this.y = 
+    //this.y = this.randY();
+   // this.speed = this.randSpeed();
+//}
+
+
 
 //Updating enemy if enemy crosses the screen
 Enemy.prototype.update = function(dt) {
@@ -124,10 +144,10 @@ document.addEventListener('keyup', function(e) {
 Player.prototype.update = function() {
 
    if (this.y == -25) {
-        // reset if player on water
+        //reset if player on water
         this.reset();
         }
-        else if (this.y > 400)
+       else  if (this.y > 400)
         //player can not go lower than starting position
         {
        this.y = 400;
@@ -142,14 +162,23 @@ Player.prototype.update = function() {
        {
        this.x = 500;
        }
-       //  else if (this.y >= 60 && this.y <= 230) {          
+         else if (this.y >= 60 && this.y <= 230) {          
 
-         // for (i = 0; i < allEnemies.length; i++) { 
-     //if (enemy[i].y == player.y) {
-      //     this.reset();
-       //    }
+       
+    if (enemy1.x >= this.x - 20 && enemy1.x <= this.x + 20) {
+           this.reset();
+      }
+       else if (enemy2.x >= this.x - 20 && enemy2.x <= this.x + 20) {
+           this.reset();
+      }
+        else if (enemy3.x >= this.x - 20 && enemy3.x <= this.x + 20) {
+           this.reset();
+      }
+         else if (enemy4.x >= this.x - 20 && enemy4.x <= this.x + 20) {
+           this.reset();
+      }
 }
-   
+   }
  
         
 
@@ -207,22 +236,30 @@ document.addEventListener('keyup', function(e) {
 
 //}());
 
-//Creating an array called allEnemies with set parameters
+//Creating an array called allEnemies with set para
+//   allEnemies.push(new Enemy(-10,145,90));
+//  allEnemies.push(new Enemy(-2,230,130));meters
 //var allEnemies = [];
 //(function setEnemies(){
 //   allEnemies.push(new Enemy(-5,60,80));
-//   allEnemies.push(new Enemy(-10,145,90));
-//  allEnemies.push(new Enemy(-2,230,130));
 
 //}());
 
 
-var enemy1 = new Enemy();
-var enemy2 = new Enemy();
-var enemy3 = new Enemy();
-var allEnemies = [enemy1,enemy2,enemy3];
+var enemy1 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
+var enemy2 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
+var enemy3 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
+var enemy4 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
 
-var allEnemies = [];
+var allEnemies = [enemy1,enemy2,enemy3,enemy4];
+
+console.log(enemy1);
+//var enemy1 = new Enemy();
+//var enemy2 = new Enemy();
+//var enemy3 = new Enemy();
+//var allEnemies = [enemy1,enemy2,enemy3];
+
+//var allEnemies = [];
 
 
 //(function setEnemies()
