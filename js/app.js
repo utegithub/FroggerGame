@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 //Enemy constructor
 var Enemy = function(x, y, speed) {
@@ -82,16 +83,45 @@ var yArray =  [60,145,230];
  var randY = yArray[Math.floor(Math.random() * yArray.length)];
  return randY;
 >>>>>>> origin/master
+=======
+//Enemy constructor
+var Enemy = function(x, y, speed) {
+
+        this.sprite = 'images/enemy-bug.png';
+        this.y = y;
+        this.speed = speed;
+        this.x = -3;
+    }
+    //Creating a random Speed out of the array
+
+function makeRandomSpeed() {
+
+    var speedArray = [30, 45, 55, 60, 90, 120];
+    var randSpeed = speedArray[Math.floor(Math.random() * speedArray.length)];
+    return randSpeed;
+}
+
+
+function makeRandomY() {
+
+    var yArray = [60, 145, 230];
+    var randY = yArray[Math.floor(Math.random() * yArray.length)];
+    return randY;
+>>>>>>> Stashed changes
 }
 
 
 //Updating enemy if enemy crosses the screen
 Enemy.prototype.update = function(dt) {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
     this.x += this.speed * dt;
     if (this.x > 600) {
         this.reset();
+<<<<<<< Updated upstream
 =======
         this.x += this.speed * dt;
         if (this.x >600)
@@ -100,12 +130,15 @@ Enemy.prototype.update = function(dt) {
         this.reset();
 		
 >>>>>>> origin/master
+=======
+>>>>>>> Stashed changes
     }
 };
 
 //Resetting the enemy with the random values
 Enemy.prototype.reset = function() {
     this.x = -2
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     this.y = makeRandomY();
     this.speed = makeRandomSpeed();
@@ -113,6 +146,10 @@ Enemy.prototype.reset = function() {
   this.y = makeRandomY();
   this.speed = makeRandomSpeed();
 >>>>>>> origin/master
+=======
+    this.y = makeRandomY();
+    this.speed = makeRandomSpeed();
+>>>>>>> Stashed changes
 }
 >>>>>>> origin/master
 
@@ -134,6 +171,7 @@ Enemy.prototype.reset = function() {
          this.speed = makeRandomSpeed();
      }
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 //Resetting the enemy with the random values
@@ -150,6 +188,10 @@ Enemy.prototype.reset = function() {
 
 
 <<<<<<< HEAD
+=======
+
+
+>>>>>>> Stashed changes
 //Updating enemy if enemy crosses the screen
 Enemy.prototype.update = function(dt) {
     this.x += this.speed * dt;
@@ -159,11 +201,16 @@ Enemy.prototype.update = function(dt) {
         this.reset();
     }
 }
+<<<<<<< Updated upstream
 =======
 >>>>>>> origin/master
+=======
+
+>>>>>>> Stashed changes
 
 >>>>>>> origin/master
 
+<<<<<<< Updated upstream
      //Updating enemy if enemy crosses the screen
      Enemy.prototype.update = function(dt) {
          this.x += this.speed * dt;
@@ -175,6 +222,8 @@ Enemy.prototype.update = function(dt) {
      }
 
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -186,6 +235,7 @@ var enemy3 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
 var enemy4 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
 
 var allEnemies = [enemy1, enemy2, enemy3, enemy4];
+<<<<<<< Updated upstream
 
 console.log(enemy1);
 =======
@@ -195,6 +245,10 @@ console.log(enemy1);
      Enemy.prototype.render = function() {
          ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
      };
+=======
+
+console.log(enemy1);
+>>>>>>> Stashed changes
 
      var enemy1 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
      var enemy2 = new Enemy(-3, makeRandomY(), makeRandomSpeed());
@@ -209,15 +263,23 @@ console.log(enemy1);
 
      // Now write your own player class
 
+<<<<<<< Updated upstream
      //var PlayerYArray = [60,145,230,315,400];
 
      // Player object
 
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 var Player = function(x, y) {
     this.x = x;
     this.y = y;
     this.sprite = 'images/char-boy.png';
+<<<<<<< Updated upstream
+=======
+
+}
+>>>>>>> Stashed changes
 
 }
 =======
@@ -262,11 +324,15 @@ document.addEventListener('keyup', function(e) {
 
 Player.prototype.update = function() {
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     if (this.y == -25) {
 =======
    if (this.y == -25) {
 >>>>>>> origin/master
+=======
+    if (this.y == -25) {
+>>>>>>> Stashed changes
         //reset if player on water
         this.reset();
     } else if (this.y > 400)
@@ -293,6 +359,7 @@ Player.prototype.update = function() {
                 this.reset();
             }
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
     }
@@ -335,6 +402,12 @@ Player.prototype.update = function() {
         
 >>>>>>> origin/master
 >>>>>>> origin/master
+=======
+
+    }
+}
+
+>>>>>>> Stashed changes
 
 
 <<<<<<< HEAD
@@ -353,6 +426,7 @@ Player.prototype.handleInput = function(key) {
         console.log("Right");
     }
 }
+<<<<<<< Updated upstream
 =======
      // This class requires an update(), render() and
      // a handleInput() method.
@@ -459,6 +533,22 @@ console.log(enemy1);
      }
 
 >>>>>>> origin/master
+=======
+
+
+document.addEventListener('keyup', function(e) {
+    var allowedKeys = {
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down'
+    };
+
+    player.handleInput(allowedKeys[e.keyCode]);
+});
+
+
+>>>>>>> Stashed changes
 
      document.addEventListener('keyup', function(e) {
          var allowedKeys = {
@@ -472,6 +562,7 @@ console.log(enemy1);
      });
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 var player = new Player(200, 400);
 =======
@@ -482,3 +573,6 @@ var player = new Player(200, 400);
 
      var player = new Player(200, 400); 
 >>>>>>> origin/master
+=======
+var player = new Player(200, 400);
+>>>>>>> Stashed changes
