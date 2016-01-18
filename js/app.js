@@ -99,18 +99,6 @@
 
 
 
- // This listens for key presses and sends the keys to your
- // Player.handleInput() method. You don't need to modify this.
- document.addEventListener('keyup', function(e) {
-     var allowedKeys = {
-         37: 'left',
-         38: 'up',
-         39: 'right',
-         40: 'down'
-     };
-
-     player.handleInput(allowedKeys[e.keyCode]);
- });
 
 
  Player.prototype.update = function() {
@@ -135,7 +123,7 @@
          for (var i = 0; i < allEnemies.length; i++) {
 
 
-             if (allEnemies[i].x > this.x - 16 && allEnemies[i].x < this.x + 16) {
+             if (allEnemies[i].x > this.x - 16 && allEnemies[i].x < this.x + 25) {
 
 
                  //if (allEnemies[i].x == this.x) {
@@ -154,16 +142,16 @@
 
  Player.prototype.handleInput = function(key) {
      if (key === 'up') {
-         this.y -= 42.5;
+         this.y -= 85;
          console.log("Up");
-     } else if (key === 'down') {
-         this.y += 42.5;
+     } else if (key === 'down') {  
+         this.y += 85;
          console.log("Down");
      } else if (key === 'left') {
-         this.x -= 25;
+         this.x -= 50;
          console.log("Left");
      } else if (key === 'right') {
-         this.x += 25;
+         this.x += 50;
          console.log("Right");
      }
  };
