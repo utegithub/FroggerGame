@@ -5,6 +5,10 @@ Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd0
 
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
+To play the game: All files - js, css, images and index.html - need to be located in one folder.
+Open index.html in a browser to start playing the game.
+
+
 frontend-nanodegree-arcade-game includes three JS files
 
 Resources.js = Image loading utility

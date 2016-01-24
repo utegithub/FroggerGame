@@ -100,7 +100,7 @@ Player.prototype.reset = function() {
 
 Player.prototype.update = function() {
 
-    if (this.y == -25) {
+    if (this.y === -25) {
         //reset if player on water
         this.reset();
     } else if (this.y > 400)
@@ -119,8 +119,9 @@ Player.prototype.update = function() {
 
         for (var i = 0; i < allEnemies.length; i++) {
 
-            if ((allEnemies[i].x > this.x - 16 && allEnemies[i].x < this.x + 25) && (allEnemies[i].y == this.y)) {
-                //Check if the enemy is on the same x (range added) and y coordinates as the player
+            //if ((allEnemies[i].x > this.x - 16 && allEnemies[i].x < this.x + 25) && (allEnemies[i].y == this.y)) 
+            if ((allEnemies[i].x > this.x - 70 && allEnemies[i].x < this.x + 50) && (allEnemies[i].y == this.y)) 
+            {                //Check if the enemy is on the same x (range added) and y coordinates as the player
                 this.reset();
             }
         }
